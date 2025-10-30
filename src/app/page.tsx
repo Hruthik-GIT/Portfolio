@@ -123,6 +123,16 @@ export default function Home() {
           </Row>
           <Row flex={3} paddingX="20">
             <Column gap="24" fillWidth>
+              {/* Vestrics video */}
+              <Row fillWidth paddingBottom="m">
+                <video
+                  controls
+                  preload="metadata"
+                  style={{ width: "100%", borderRadius: "12px" }}
+                >
+                  <source src="/videos/vestrics.mp4" type="video/mp4" />
+                </video>
+              </Row>
               <Column gap="8">
                 <Heading as="h3" variant="heading-strong-l">Vestrics Solutions Private Limited</Heading>
                 <Text onBackground="neutral-weak" variant="body-default-m">Software & AI Developer Intern — Hyderabad, India — Jul 2023 – Jan 2024</Text>

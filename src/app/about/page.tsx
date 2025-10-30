@@ -206,6 +206,16 @@ export default function About() {
                 {about.work.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
+                {/* Vestrics video above first experience */}
+                <Row fillWidth paddingLeft="40" paddingBottom="m">
+                  <video
+                    controls
+                    preload="metadata"
+                    style={{ width: "100%", borderRadius: "12px" }}
+                  >
+                    <source src="/videos/vestrics.mp4" type="video/mp4" />
+                  </video>
+                </Row>
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
