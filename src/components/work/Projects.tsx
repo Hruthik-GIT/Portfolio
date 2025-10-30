@@ -30,7 +30,17 @@ export function Projects({ range, exclude }: ProjectsProps) {
           priority={index < 2}
           key={post.slug}
           href={`/work/${post.slug}`}
-          images={post.metadata.images}
+          images={(() => {
+            // Hide carousel/images for selected projects on the Projects page
+            const hideImagesFor = new Set([
+              "ml-computer-vision-earthquake-prediction-model",
+              "ai-in-education",
+              "automate-design-handovers-with-a-figma-to-code-pipeline",
+              "smart-e-secretary",
+              "whatsapp-automation-software",
+            ]);
+            return hideImagesFor.has(post.slug) ? [] : post.metadata.images;
+          })()}
           title={post.metadata.title}
           description={post.metadata.summary}
           content={post.content}
