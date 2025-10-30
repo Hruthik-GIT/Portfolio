@@ -126,7 +126,10 @@ export default function Home() {
               {/* Vestrics video */}
               <Row fillWidth paddingBottom="m">
                 <video
-                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
                   preload="metadata"
                   style={{ width: "100%", borderRadius: "12px" }}
                 >
