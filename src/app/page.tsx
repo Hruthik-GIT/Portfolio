@@ -187,7 +187,14 @@ export default function Home() {
               priority={index < 2}
               key={post.slug}
               href={`/work/${post.slug}`}
-              images={post.slug === "ai-in-education" ? [] : post.metadata.images}
+              images={(() => {
+                const hideOnHome = new Set([
+                  "ai-in-education",
+                  "automate-design-handovers-with-a-figma-to-code-pipeline",
+                  "ml-computer-vision-earthquake-prediction-model",
+                ]);
+                return hideOnHome.has(post.slug) ? [] : post.metadata.images;
+              })()}
               title={post.metadata.title}
               description={post.metadata.summary}
               content={post.content}
