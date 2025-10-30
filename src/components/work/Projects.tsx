@@ -61,7 +61,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           description={post.metadata.summary}
           content={post.content}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-          link={post.metadata.link || ""}
+          link={post.slug === "automate-design-handovers-with-a-figma-to-code-pipeline" ? "" : (post.metadata.link || "")}
         />
       ))}
     </Column>
