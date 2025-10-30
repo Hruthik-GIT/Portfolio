@@ -31,12 +31,16 @@ export default function Home() {
   // Pick only the requested projects for the homepage
   const allProjects = getPosts(["src", "app", "work", "projects"]);
   const allowedSlugs = new Set([
-    "building-once-ui-a-customizable-design-system", // Quantum Hedge AI project
+    "building-once-ui-a-customizable-design-system", // QuantumHedge AI
     "ai-in-education",
+    "automate-design-handovers-with-a-figma-to-code-pipeline", // AI in Banking
+    "ml-computer-vision-earthquake-prediction-model",
   ]);
   const preferredOrder = [
     "building-once-ui-a-customizable-design-system",
     "ai-in-education",
+    "automate-design-handovers-with-a-figma-to-code-pipeline",
+    "ml-computer-vision-earthquake-prediction-model",
   ];
   const orderIndex = new Map(preferredOrder.map((slug, idx) => [slug, idx]));
   const selectedProjects = allProjects
@@ -183,7 +187,7 @@ export default function Home() {
               priority={index < 2}
               key={post.slug}
               href={`/work/${post.slug}`}
-              images={post.metadata.images}
+              images={post.slug === "ai-in-education" ? [] : post.metadata.images}
               title={post.metadata.title}
               description={post.metadata.summary}
               content={post.content}
