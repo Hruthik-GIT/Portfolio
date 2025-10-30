@@ -209,14 +209,14 @@ export default function About() {
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     {experience.company === "Vestrics Solutions Private Limited" && (
-                      <Row fillWidth paddingLeft="40" paddingBottom="m">
+                      <Row fillWidth paddingBottom="m">
                         <video
                           autoPlay
                           muted
                           playsInline
                           loop
                           preload="metadata"
-                          style={{ width: "100%,", borderRadius: "12px" }}
+                          style={{ width: "100%", maxWidth: "100%", height: "auto", borderRadius: "12px", display: "block" }}
                         >
                           <source src="/videos/vestrics.mp4" type="video/mp4" />
                         </video>
