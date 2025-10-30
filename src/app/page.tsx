@@ -34,9 +34,19 @@ export default function Home() {
     "building-once-ui-a-customizable-design-system", // Quantum Hedge AI project
     "ai-in-education",
   ]);
+  const preferredOrder = [
+    "building-once-ui-a-customizable-design-system",
+    "ai-in-education",
+  ];
+  const orderIndex = new Map(preferredOrder.map((slug, idx) => [slug, idx]));
   const selectedProjects = allProjects
     .filter((p) => allowedSlugs.has(p.slug))
-    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime());
+    .sort((a, b) => {
+      const aIdx = orderIndex.get(a.slug) ?? Number.POSITIVE_INFINITY;
+      const bIdx = orderIndex.get(b.slug) ?? Number.POSITIVE_INFINITY;
+      if (aIdx !== bIdx) return aIdx - bIdx;
+      return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+    });
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
