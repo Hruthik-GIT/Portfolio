@@ -122,9 +122,25 @@ export default function Home() {
             </Heading>
           </Row>
           <Row flex={3} paddingX="20">
-            <Column gap="16" fillWidth>
-              <Heading as="h3" variant="heading-strong-l">Vestrics Solutions</Heading>
-              <Heading as="h3" variant="heading-strong-l">Vesra Software Services</Heading>
+            <Column gap="24" fillWidth>
+              <Column gap="8">
+                <Heading as="h3" variant="heading-strong-l">Vestrics Solutions</Heading>
+                <Text onBackground="neutral-weak" variant="body-default-m">Software Engineer — Hyderabad, India — 2023 – 2024</Text>
+                <Column gap="s">
+                  <Text>- Built and maintained production-ready React/Next.js front-ends with accessible UI.</Text>
+                  <Text>- Implemented RESTful/GraphQL integrations and observability with logging/metrics.</Text>
+                  <Text>- Automated CI/CD pipelines and improved release cadence and reliability.</Text>
+                </Column>
+              </Column>
+              <Column gap="8">
+                <Heading as="h3" variant="heading-strong-l">Vesra Software Services</Heading>
+                <Text onBackground="neutral-weak" variant="body-default-m">AI Engineer — Hyderabad, India — 2022 – 2023</Text>
+                <Column gap="s">
+                  <Text>- Prototyped NLP and computer-vision services and exposed inference via FastAPI.</Text>
+                  <Text>- Designed data pipelines and model monitoring for stable production inference.</Text>
+                  <Text>- Collaborated cross-functionally to translate requirements into deliverables.</Text>
+                </Column>
+              </Column>
             </Column>
           </Row>
         </Row>
