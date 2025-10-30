@@ -1,5 +1,5 @@
 ---
-title: "Building Once UI, a Customizable Design System"
+title: "Building Opulence AI, a multi-agent platform for autonomous, proactive risk mitigation in stock portfolio."
 publishedAt: "2024-04-08"
 summary: "Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration."
 images:
@@ -8,38 +8,35 @@ images:
   - "/images/projects/project-01/cover-03.jpg"
   - "/images/projects/project-01/cover-04.jpg"
 team:
-  - name: "Selene Yu"
-    role: "Software Engineer"
+  - name: "Hruthik Nitchal Rao Nimmaneni"
+    role: "AI Engineer"
     avatar: "/images/avatar.jpg"
-    linkedIn: "https://www.linkedin.com/company/once-ui/"
-  - name: "Lorant One"
-    role: "Design Engineer"
-    avatar: "/images/projects/project-01/avatar-01.jpg"
-    linkedIn: "https://www.linkedin.com/company/once-ui/"
+    linkedIn: "https://www.linkedin.com/in/hnrao-76419a336/"
 ---
 
 ## Overview
 
-Development of a flexible and highly customizable design system using Next.js for front-end and Figma for design collaboration.
+Opulence AI uses Google Gemini for deep reasoning and the ADK for orchestration to form a closed-loop system that perceives risk, generates a strategic hedge, and executes the trade in seconds, without human intervention. It provides institutional-grade auditability (explainable trades) and replaces high-cost quant labor with a scalable, high-margin B2B SaaS model.
 
 ## Key Features
 
-- **Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Theming and Customization**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Figma Integration**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
+- **Autonomous, Closed-Loop Workflow**: The system operates as a self-directed, continuous machine that replaces the slow, reactive nature of manual analysis.
+- **Multi-Agent Orchestration**: The platform is managed by the Orchestrator Agent which coordinates four specialized agents (Ingestion, Risk, Strategy, Execution). The system moves from data perception to trade execution in a single, autonomous cycle, eliminating human latency.
+- **Proactive Hedging**: Unlike traditional algorithms that wait for price movement, the Strategy Agent (powered by Gemini) reasons about potential risk (high VIX, bearish sentiment) and autonomously executes a hedge trade before a market downturn is fully realized.
+- **Auditable Deep Reasoning**: The system is designed to be fully transparent, a critical feature for any financial product dealing with compliance and regulation.
 
 ## Technologies Used
 
-- **Next.js**: For fast, server-rendered React applications.
-- **Figma**: For creating and managing design assets and prototypes.
-- **Styled-Components**: For styling React components with a modular, themable approach.
-- **Storybook**: For building an interactive, documented component library.
+- **Google Gemini (Model)**: Served as the large language model (LLM) powering the Strategy Agent. Gemini provided the advanced deep-thinking and reasoning required to interpret quantitative risk reports and translate them into actionable, auditable hedging instructions.
+- **Google ADK**: The primary multi-agent framework used for building and orchestrating the entire system. ADK defined the structure, facilitated the creation of LLMAgents and ToolAgents, and managed the sequential flow of data between the five specialized agents.
+- **Pydantic / Python**: Used to create strict data contracts (e.g., HedgingInstruction, MarketData). This technology ensured reliable and auditable communication between agents, preventing data errors common in complex multi-step workflows.
+- **React/js**: Used to build the highly polished, modern, and responsive dashboard UI. React managed the application state and dynamically updated all visualization components, providing a professional MVP appearance.
+- **Google Firestore**: Used as the persistent, real-time database to store the portfolio's current state and the Execution Agent's action logs. This enabled the "wow factor" of instant UI updates when a trade was "placed" by the autonomous agent. 
 
 ## Challenges and Learnings
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+One key challenge was balancing the data fetched from the APIs for proper utilization.
 
 ## Outcome
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+High-Impact Value Proposition: Mitigates risk and the platform solves a high-cost problem with a high-margin solution. 

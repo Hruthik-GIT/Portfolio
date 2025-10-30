@@ -8,6 +8,13 @@
     }
 }
 
+.avatar {
+    :global(img) {
+        object-fit: cover;
+        object-position: center 10%; /* Adjust this value to focus on your face */
+    }
+}
+
 @media (max-width: breakpoints.$s) {
     .textAlign {
         text-align: center;
