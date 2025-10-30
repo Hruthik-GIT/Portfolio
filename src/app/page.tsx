@@ -12,8 +12,9 @@ import {
   Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
+import { Mailchimp, ProjectCard } from "@/components";
 import { Projects } from "@/components/work/Projects";
+import { getPosts } from "@/utils/utils";
 import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
@@ -27,6 +28,15 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  // Pick only the requested projects for the homepage
+  const allProjects = getPosts(["src", "app", "work", "projects"]);
+  const allowedSlugs = new Set([
+    "building-once-ui-a-customizable-design-system", // Quantum Hedge AI project
+    "ai-in-education",
+  ]);
+  const selectedProjects = allProjects
+    .filter((p) => allowedSlugs.has(p.slug))
+    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime());
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -100,8 +110,46 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      {/* Work Experience section */}
+      <Column fillWidth gap="24" marginBottom="l">
+        <Row fillWidth paddingRight="64">
+          <Line maxWidth={48} />
+        </Row>
+        <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
+          <Row flex={1} paddingLeft="l" paddingTop="24">
+            <Heading as="h2" variant="display-strong-xs" wrap="balance">
+              Work Experience
+            </Heading>
+          </Row>
+          <Row flex={3} paddingX="20">
+            <Column gap="16" fillWidth>
+              <Heading as="h3" variant="heading-strong-l">Vestrics Solutions</Heading>
+              <Heading as="h3" variant="heading-strong-l">Vesra Software Services</Heading>
+            </Column>
+          </Row>
+        </Row>
+        <Row fillWidth paddingLeft="64" horizontal="end">
+          <Line maxWidth={48} />
+        </Row>
+      </Column>
+
+      {/* Only the two selected projects */}
       <RevealFx translateY="16" delay={0.6}>
-        <Projects range={[1, 1]} />
+        <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
+          {selectedProjects.map((post, index) => (
+            <ProjectCard
+              priority={index < 2}
+              key={post.slug}
+              href={`/work/${post.slug}`}
+              images={post.metadata.images}
+              title={post.metadata.title}
+              description={post.metadata.summary}
+              content={post.content}
+              avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+              link={post.metadata.link || ""}
+            />
+          ))}
+        </Column>
       </RevealFx>
       {routes["/blog"] && (
         <Column fillWidth gap="24" marginBottom="l">
@@ -123,7 +171,7 @@ export default function Home() {
           </Row>
         </Column>
       )}
-      <Projects range={[2]} />
+      {/* Hide remaining projects on the homepage as requested */}
       <Mailchimp />
     </Column>
   );
