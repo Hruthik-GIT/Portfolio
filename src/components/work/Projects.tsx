@@ -15,7 +15,23 @@ export function Projects({ range, exclude }: ProjectsProps) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }
 
+  // Preferred order for Projects page
+  const preferredOrder = [
+    "building-once-ui-a-customizable-design-system",
+    "ai-in-education",
+    "automate-design-handovers-with-a-figma-to-code-pipeline",
+    "ml-computer-vision-earthquake-prediction-model",
+    "smart-e-secretary",
+    "whatsapp-automation-software",
+  ];
+  const orderIndex = new Map(preferredOrder.map((slug, idx) => [slug, idx]));
+
   const sortedProjects = allProjects.sort((a, b) => {
+    const aIdx = orderIndex.has(a.slug) ? (orderIndex.get(a.slug) as number) : Number.POSITIVE_INFINITY;
+    const bIdx = orderIndex.has(b.slug) ? (orderIndex.get(b.slug) as number) : Number.POSITIVE_INFINITY;
+
+    if (aIdx !== bIdx) return aIdx - bIdx;
+    // Fallback: newest first
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 
