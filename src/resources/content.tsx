@@ -226,65 +226,6 @@ const work: Work = {
   label: "Projects",
   title: `Projects – ${person.name}`,
   description: `A showcase of my AI and engineering projects.`,
-  // The structure below is for projects, matching the provided format.
-  experiences: [
-    {
-      company: "AI in Education",
-      timeframe: "Aug 2024 - Present",
-      role: "Bay Atlantic University",
-      achievements: [
-        <>Engineered an AI-driven study portal utilizing Deep Learning and NLP with fine-tuning for adaptable content delivery.</>,
-        <>Accelerated ETL Pipelines with Spark and Presto, facilitating real-time data processing for adaptive learning models.</>,
-        <>Developed a multimodal data handling system for combined text, image, and video content for personalized learning experiences, leveraging transformers/LLMs and collaborative filtering for content-based recommenders.</>,
-        <>Applied JIRA and Quick Check for agile project management and automated testing, ensuring system reliability.</>,
-      ],
-      images: [],
-    },
-    {
-      company: "AI in Banking",
-      timeframe: "Ongoing",
-      role: "Hyderabad, India",
-      achievements: [
-        <>Applied reinforcement learning with offline RL and human-feedback-based learning for a PyTorch Neural Network Model aimed at forecasting cash flow needs for banks, enhancing cash-hold capability by 50%.</>,
-        <>Integrated multimodal data into a financial dashboard built on React, utilizing AWS Lambda Functions for deployment.</>,
-        <>Leveraged withdrawal and consumer behavior patterns to train ML models for customer count prediction and minimize bank's dependency on high-cost external funding by 60%, reducing crowding by 20%.</>,
-      ],
-      images: [],
-    },
-    {
-      company: "ML Computer Vision Earthquake Prediction Model",
-      timeframe: "Ongoing",
-      role: "Hyderabad, India",
-      achievements: [
-        <>Successfully advanced a Random Forest Regressor-based algorithm for seismic impact prediction by leveraging 110 years of satellite imagery (image and video).</>,
-        <>Consistently performed dimensionality reduction and deployed via FastAPI, to host on Google Cloud Functions.</>,
-        <>Implemented advanced techniques such as k-fold cross-validation and hyperparameter tuning to achieve a test-set accuracy of 97.5%.</>,
-      ],
-      images: [],
-    },
-    {
-      company: "Smart E-Secretary",
-      timeframe: "Ongoing",
-      role: "Hyderabad, India",
-      achievements: [
-        <>Embarked upon a voice assistant driven by AI, harnessing pyttsx3 (Python's text conversion library) and NLP methods for automating tasks.</>,
-        <>Emphasized testing, performance optimization, and improved tokenization for both mobile and desktop applications.</>,
-        <>Integrated the solution with IoT devices and implemented it as a microservice via Docker on the Azure platform using Azure Functions.</>,
-      ],
-      images: [],
-    },
-    {
-      company: "WhatsApp Automation Software",
-      timeframe: "Ongoing",
-      role: "Hyderabad, India",
-      achievements: [
-        <>Hatched an automation tool using PyWhatkit to schedule and send WhatsApp messages via APIs.</>,
-        <>Designed an intuitive user interface with React.js to enhance engagement by 30%.</>,
-        <>Ensured Iac Security compliance and CI/CD Compatibility by enacting DevSecOps Principles, Linux Kernel security measures and multi-threading techniques.</>,
-      ],
-      images: [],
-    },
-  ],
 };
 
 const gallery: Gallery = {
