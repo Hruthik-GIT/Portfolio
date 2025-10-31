@@ -143,7 +143,8 @@ export default function Home() {
                   muted
                   playsInline
                   loop
-                  preload="metadata"
+                  preload="none"
+                  loading="lazy"
                   style={{ width: "100%", borderRadius: "12px" }}
                 >
                   <source src="/videos/vestrics.mp4" type="video/mp4" />

@@ -215,7 +215,8 @@ export default function About() {
                           muted
                           playsInline
                           loop
-                          preload="metadata"
+                          preload="none"
+                          loading="lazy"
                           style={{ width: "100%", maxWidth: "100%", height: "auto", borderRadius: "12px", display: "block" }}
                         >
                           <source src="/videos/vestrics.mp4" type="video/mp4" />
