@@ -66,15 +66,6 @@ const home: Home = {
   ),
 };
 
-const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about AI and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
 const about: About = {
   path: "/about",
   label: "About",
@@ -347,4 +338,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, blog, about, work, gallery };
+export { person, social, newsletter, home, about, work, gallery };
