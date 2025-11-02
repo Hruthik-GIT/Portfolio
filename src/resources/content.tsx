@@ -49,7 +49,7 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Building Opulence, an Agentic AI Portfolio Hedging Solution</strong>{" "}
+        <strong className="ml-4">Building QuantumHedge AI</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -240,13 +240,8 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/quant.mov",
-      alt: "Quant",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/devfest.mp4",
-      alt: "DevFest",
+      src: "/images/gallery/dcstw.mov",
+      alt: "DCSTW",
       orientation: "horizontal",
     },
     {
@@ -257,6 +252,16 @@ const gallery: Gallery = {
     {
       src: "/images/gallery/meet.jpg",
       alt: "Meet",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/suit.jpg",
+      alt: "Suit",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/quantum.mov",
+      alt: "Quantum",
       orientation: "horizontal",
     },
   ],
