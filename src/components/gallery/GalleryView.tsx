@@ -26,15 +26,22 @@ export default function GalleryView() {
               autoPlay={false}
               muted
               playsInline
-              preload="none"
-              // loading="lazy"
+              preload="metadata"
+              crossOrigin="anonymous"
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
               }}
+              onError={(e) => {
+                console.error("Video loading error:", e, image.src);
+              }}
             >
-              <source src={image.src} type={image.src.endsWith(".mov") ? "video/quicktime" : "video/mp4"} />
+              <source 
+                src={image.src} 
+                type={image.src.endsWith(".mov") ? "video/quicktime" : image.src.endsWith(".mp4") ? "video/mp4" : "video/webm"} 
+              />
+              Your browser does not support the video tag.
             </video>
           </div>
         ) : (

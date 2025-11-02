@@ -44,6 +44,37 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@once-ui-system/core"],
   },
+  // Headers for video files
+  async headers() {
+    return [
+      {
+        source: "/images/gallery/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/videos/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default withMDX(nextConfig);
