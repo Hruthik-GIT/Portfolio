@@ -144,7 +144,7 @@ export default function Home() {
                   playsInline
                   loop
                   preload="none"
-                  loading="lazy"
+                  // loading="lazy"
                   style={{ width: "100%", borderRadius: "12px" }}
                 >
                   <source src="/videos/vestrics.mp4" type="video/mp4" />
