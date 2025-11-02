@@ -27,7 +27,7 @@ export default function GalleryView() {
               muted
               playsInline
               preload="none"
-              loading="lazy"
+              // loading="lazy"
               style={{
                 width: "100%",
                 height: "100%",
